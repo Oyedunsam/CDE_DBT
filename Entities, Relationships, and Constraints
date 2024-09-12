@@ -1,0 +1,21 @@
+Entities:
+Branch: Represents each restaurant location (e.g., Agege, Lekki). Attributes include branch ID, location, and available menu items.
+Menu Item: Contains details of each menu item, such as item ID, name, category (e.g., African, Chinese), price, and availability per branch.
+Customer: Stores information about customers, such as customer ID, name, contact details, and purchase history.
+Order: Captures every transaction, with attributes such as order ID, date, time, payment method, and dining option (dine-in, take-out, or online).
+Payment Method: Details on the payment types, including method ID, type (cash, card, online), and payment gateway (Nomba, Paystack, etc.).
+Inventory: Tracks stock levels for each branch and item. Attributes include item ID, branch ID, stock quantity, and reorder threshold.
+
+
+Relationships:
+Branch-Order: A branch can have many orders (one-to-many).
+Order-Customer: A customer can place multiple orders (one-to-many).
+Order-Menu Item: Each order can have multiple menu items, and a menu item can appear in many orders (many-to-many).
+Order-Payment Method: Each order uses one payment method (one-to-one).
+Branch-Inventory: Each branch manages the inventory for multiple items (one-to-many).
+
+
+Constraints:
+Stock Availability: Orders cannot be placed for menu items with zero stock.
+Unique Customer ID: Each customer must have a unique identifier.
+Unique Order ID: Each order should have a unique identifier across the system.
