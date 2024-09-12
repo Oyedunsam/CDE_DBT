@@ -1,0 +1,47 @@
+Business Process: Sales Analysis
+
+Business Question:
+What are the sales trends across different branches, payment methods, and dining options (dine-in, take-out, online)?
+
+Grain:
+The grain of the fact table is each individual order (i.e., one record per order).
+
+Dimensions:
+
+Branch Dimension:
+Attributes: Branch ID, Branch Name, Location
+
+Menu Item Dimension:
+Attributes: Menu Item ID, Menu Item Name, Category, Price
+
+Customer Dimension:
+Attributes: Customer ID, Customer Name, Customer Type (loyalty member, new customer, etc.)
+
+Payment Method Dimension:
+Attributes: Payment Method ID, Payment Type (cash, card, online), Payment Gateway
+
+Time Dimension:
+Attributes: Date, Day, Month, Year, Time
+
+Dining Option Dimension:
+Attributes: Dining Option (dine-in, take-out, online)
+
+Fact Table: Order Fact
+Grain: Each order
+
+Measures (Facts):
+  Total Sales Amount
+  Quantity Ordered
+  Discount Applied
+  Cost of Goods Sold (COGS)
+
+Foreign Keys:
+Branch ID
+Menu Item ID
+Customer ID
+Payment Method ID
+Time ID
+Dining Option
+
+This model would allow Fufu Republic to perform detailed analysis of sales trends across various locations, payment methods, and customer preferences. 
+It also supports optimizing stock management and improving customer experience through targeted promotions.
